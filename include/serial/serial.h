@@ -224,7 +224,7 @@ public:
    * the function exits with the port in a readable state, false otherwise
    * (due to timeout or select interruption). */
   bool
-  waitReadable (uint32_t timeout = 0);
+  waitReadable (double timeout=0.0);
 
   /*! Block for a period of time corresponding to the transmission time of
    * count characters at present serial settings. This may be used in con-

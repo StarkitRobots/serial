@@ -87,7 +87,7 @@ public:
   available ();
 
   bool
-  waitReadable (uint32_t timeout);
+  waitReadable (double timeout);
 
   void
   waitByteTimes (size_t count);

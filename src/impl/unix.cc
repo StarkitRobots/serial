@@ -5,6 +5,7 @@
 
 #if !defined(_WIN32)
 
+#include <math.h>
 #include <stdio.h>
 #include <string.h>
 #include <sstream>
@@ -102,6 +103,15 @@ timespec_from_ms (const uint32_t millis)
   timespec time;
   time.tv_sec = millis / 1e3;
   time.tv_nsec = (millis - (time.tv_sec * 1e3)) * 1e6;
+  return time;
+}
+
+timespec
+timespec_from_s (double s)
+{
+  timespec time;
+  time.tv_sec = floor(s);
+  time.tv_nsec = s*1000000000 - time.tv_sec*1000000000;
   return time;
 }
 
@@ -489,13 +499,13 @@ Serial::SerialImpl::available ()
 }
 
 bool
-Serial::SerialImpl::waitReadable (uint32_t timeout)
+Serial::SerialImpl::waitReadable (double timeout)
 {
   // Setup a select call to block for serial data or a timeout
   fd_set readfds;
   FD_ZERO (&readfds);
   FD_SET (fd_, &readfds);
-  timespec timeout_ts (timespec_from_ms (timeout));
+  timespec timeout_ts (timespec_from_s (timeout));
   int r = pselect (fd_ + 1, &readfds, NULL, NULL, &timeout_ts, NULL);
 
   if (r < 0) {

@@ -102,12 +102,8 @@ Serial::available ()
 }
 
 bool
-Serial::waitReadable (uint32_t timeout)
+Serial::waitReadable (double timeout)
 {
-  if (timeout == 0) {
-    serial::Timeout implTimeout(pimpl_->getTimeout ());
-      timeout = implTimeout.read_timeout_constant;
-  }
   return pimpl_->waitReadable(timeout);
 }
 
