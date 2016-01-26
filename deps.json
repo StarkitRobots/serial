@@ -2,6 +2,7 @@
     "name": "rhoban/serial",
     "build": [
         "mkdir build",
+        "cmake ..",
         "cd build",
         "make"
     ],
