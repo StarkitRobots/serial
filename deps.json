@@ -1,0 +1,10 @@
+{
+    "name": "rhoban/serial",
+    "build": [
+        "mkdir build",
+        "cd build",
+        "make"
+    ],
+    "include": "include",
+    "libraries": "build"
+}
