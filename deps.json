@@ -6,6 +6,6 @@
         "cmake ..",
         "make"
     ],
-    "include": "include",
+    "includes": "include",
     "libraries": "build"
 }
