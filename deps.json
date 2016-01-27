@@ -1,5 +1,5 @@
 {
-    "name": "rhoban/serial",
+    "name": "rhobandeps/serial",
     "build": [
         "mkdir build",
         "cd build",
