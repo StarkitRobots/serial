@@ -7,5 +7,6 @@
         "make"
     ],
     "includes": "include",
-    "libraries": "build"
+    "libraries": "build",
+    "links": "build/libserial.so"
 }
