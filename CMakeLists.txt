@@ -1,6 +1,17 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(serial)
 
+# Find catkin macros and libraries
+find_package(catkin REQUIRED
+    cmake_modules
+)
+
+# What is published by the 'serial package'
+catkin_package(
+  INCLUDE_DIRS include
+  LIBRARIES serial
+)
+
 if(APPLE)
 	find_library(IOKIT_LIBRARY IOKit)
 	find_library(FOUNDATION_LIBRARY Foundation)
