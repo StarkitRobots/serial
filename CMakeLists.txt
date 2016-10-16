@@ -2,9 +2,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(serial)
 
 # Find catkin macros and libraries
-find_package(catkin REQUIRED
-    cmake_modules
-)
+find_package(catkin)
 
 # What is published by the 'serial package'
 catkin_package(
