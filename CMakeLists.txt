@@ -10,6 +10,8 @@ catkin_package(
   LIBRARIES serial
 )
 
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wall -Wextra")
+
 if(APPLE)
 	find_library(IOKIT_LIBRARY IOKit)
 	find_library(FOUNDATION_LIBRARY Foundation)
