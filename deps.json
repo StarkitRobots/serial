@@ -1,5 +1,5 @@
 {
-    "name": "rhobandeps/serial",
+    "name": "StarkitRobots/serial",
     "build": [
         "mkdir -p build",
         "cd build",
